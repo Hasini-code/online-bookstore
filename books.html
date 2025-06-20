@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Page Turner - Books</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- MAIN CONTENT WRAPPER -->
+  <main>
+
+    <!-- Header -->
+    <header>
+      <div class="navbar">
+        <div class="logo">Page Turner</div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="books.html">Books</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Login</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+      <form onsubmit="searchBook(event)">
+        <input type="text" id="searchInput" placeholder="Search books..." />
+        <button type="submit">Search</button>
+      </form>
+    </div>
+
+    <!-- Category Filters -->
+    <div class="filter-buttons">
+      <button onclick="filterBooks('all')">All</button>
+      <button onclick="filterBooks('romance')">Romance</button>
+      <button onclick="filterBooks('horror')">Horror</button>
+      <button onclick="filterBooks('comics')">Comics</button>
+      <button onclick="filterBooks('pshycology')">Pshycology</button>
+    </div>
+
+    <!-- Book Grid Section -->
+    <section class="books-section">
+      <h2>Available Books</h2>
+      <div class="book-grid">
+
+        <!-- Romance Book -->
+        <div class="book-card romance" data-title="it ends with us">
+          <img src="images/b9.jpg" alt="It Ends With Us" />
+          <h3>It Ends With Us</h3>
+          <p class="price">₹399</p>
+          <div class="book-buttons">
+            <button class="buy-btn">Buy Now</button>
+            <button class="rent-btn">Rent</button>
+            <button class="cart-btn">Add to Cart</button>
+          </div>
+        </div>
+        <div class="book-card romance" data-title="my fault">
+          <img src="images/b15.webp" alt="my fault" />
+          <h3>My Fault</h3>
+          <p class="price">₹499</p>
+          <div class="book-buttons">
+            <button class="buy-btn">Buy Now</button>
+            
+            <button class="cart-btn">Add to Cart</button>
+          </div>
+        </div>
+        <div class="book-card romance" data-title="your fault">
+          <img src="images/b16.webp" alt="your fault" />
+          <h3>Your Fault</h3>
+          <p class="price">₹479</p>
+          <div class="book-buttons">
+            <button class="buy-btn">Buy Now</button>
+            
+            <button class="cart-btn">Add to Cart</button>
+          </div>
+        </div>
+        <div class="book-card romance" data-title="our fault">
+          <img src="images/b17.webp" alt="our fault" />
+          <h3>our Fault</h3>
+          <p class="price">₹479</p>
+          <div class="book-buttons">
+            <button class="buy-btn">Buy Now</button>
+            
+            <button class="cart-btn">Add to Cart</button>
+          </div>
+        </div>
+        <div class="book-card romance" data-title="the fault in our stars">
+          <img src="images/b10.webp" alt="the fault in our stars " />
+          <h3> The fault in our stars</h3>
+          <p class="price">₹579</p>
+          <div class="book-buttons">
+            <button class="buy-btn">Buy Now</button>
+            <button class="rent-btn">Rent</button>
+            <button class="cart-btn">Add to Cart</button>
+          </div>
+        </div>
+        <div class="book-card romance" data-title="me before you">
+          <img src="images/b11.webp" alt="me before you" />
+          <h3>Me before you</h3>
+          <p class="price">₹479</p>
+          <div class="book-buttons">
+            <button class="buy-btn">Buy Now</button>
+            <button class="rent-btn">Rent</button>
+            <button class="cart-btn">Add to Cart</button>
+          </div>
+        </div>
+        <div class="book-card romance" data-title="elenour and park">
+          <img src="images/b12.webp" alt="elenour and park" />
+          <h3>elenour and park</h3>
+          <p class="price">₹499</p>
+          <div class="book-buttons">
+            <button class="buy-btn">Buy Now</button>
+            <button class="rent-btn">Rent</button>
+            <button class="cart-btn">Add to Cart</button>
+          </div>
+        </div>
+        <div class="book-card romance" data-title="the love hypothesis">
+          <img src="images/b13.webp" alt="the love hypothesis" />
+          <h3>the love hypothesis</h3>
+          <p class="price">₹379</p>
+          <div class="book-buttons">
+            <button class="buy-btn">Buy Now</button>
+            <button class="rent-btn">Rent</button>
+            <button class="cart-btn">Add to Cart</button>
+          </div>
+        </div>
+        <div class="book-card romance" data-title="pride and prejudice">
+          <img src="images/b18.webp" alt="pride and prejudice" />
+          <h3>pride and prejudice</h3>
+          <p class="price">₹479</p>
+          <div class="book-buttons">
+            <button class="buy-btn">Buy Now</button>
+            <button class="rent-btn">Rent</button>
+            <button class="cart-btn">Add to Cart</button>
+          </div>
+        </div><div class="book-card romance" data-title="the summer i turned pretty">
+          <img src="images/b19.webp" alt="the summer i turned pretty" />
+          <h3>the summer i turned pretty</h3>
+          <p class="price">₹599</p>
+          <div class="book-buttons">
+            <button class="buy-btn">Buy Now</button>
+            
+            <button class="cart-btn">Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Horror Book -->
+        <div class="book-card horror" data-title="conjuring">
+          <img src="images/conjuring.webp" alt="conjuring" />
+          <h3>Conjuring</h3>
+          <p class="price">₹299</p>
+          <div class="book-buttons">
+            <button class="buy-btn">Buy Now</button>
+            <button class="rent-btn">Rent</button>
+            <button class="cart-btn">Add to Cart</button>
+          </div>
+        </div>
+        <div class="book-card horror" data-title="the haunting of hill house">
+          <img src="images/b25.webp" alt="the haunting of hill house" />
+          <h3>the haunting of hill house</h3>
+          <p class="price">₹399</p>
+          <div class="book-buttons">
+            <button class="buy-btn">Buy Now</button>
+           
+            <button class="cart-btn">Add to Cart</button>
+          </div>
+        </div>
+        <div class="book-card horror" data-title="it">
+          <img src="images/b26.webp" alt="it" />
+          <h3>it</h3>
+          <p class="price">₹599</p>
+          <div class="book-buttons">
+            <button class="buy-btn">Buy Now</button>
+            <button class="rent-btn">Rent</button>
+            <button class="cart-btn">Add to Cart</button>
+          </div>
+        </div>
+
+        
+
+        <!-- Comics Book -->
+        <div class="book-card comics" data-title="past">
+          <img src="images/Past.webp" alt="past" />
+          <h3>Pictures of the past</h3>
+          <p class="price">₹450</p>
+          <div class="book-buttons">
+            <button class="buy-btn">Buy Now</button>
+            <button class="rent-btn">Rent</button>
+            <button class="cart-btn">Add to Cart</button>
+          </div>
+        </div>
+        <div class="book-card comics" data-title="harry potter">
+          <img src="images/Harry.webp" alt="harry potter" />
+          <h3>Harry Potter</h3>
+          <p class="price">₹450</p>
+          <div class="book-buttons">
+            <button class="buy-btn">Buy Now</button>
+           
+            <button class="cart-btn">Add to Cart</button>
+          </div>
+        </div>
+        <div class="book-card comics" data-title="ms marvel">
+          <img src="images/b22.webp" alt="ms marvel" />
+          <h3>ms marvel</h3>
+          <p class="price">₹399</p>
+          <div class="book-buttons">
+            <button class="buy-btn">Buy Now</button>
+            <button class="rent-btn">Rent</button>
+            <button class="cart-btn">Add to Cart</button>
+          </div>
+        </div>
+        <div class="book-card comics" data-title="sandman">
+          <img src="images/b23.webp" alt="sand man" />
+          <h3>sand man</h3>
+          <p class="price">₹300</p>
+          <div class="book-buttons">
+            <button class="buy-btn">Buy Now</button>
+        
+            <button class="cart-btn">Add to Cart</button>
+          </div>
+        </div>
+
+
+         <!-- Pshycology Book -->
+        <div class="book-card pshycology" data-title="pshycology">
+          <img src="images/b5.jpg" alt="pshycology" />
+          <h3>pshycology of Money</h3>
+          <p class="price">₹450</p>
+          <div class="book-buttons">
+            <button class="buy-btn">Buy Now</button>
+            <button class="rent-btn">Rent</button>
+            <button class="cart-btn">Add to Cart</button>
+          </div>
+        </div>
+        <div class="book-card pshycology" data-title="5 club">
+          <img src="images/b7.jpg" alt="5 club" />
+          <h3>5 club</h3>
+          <p class="price">₹450</p>
+          <div class="book-buttons">
+            <button class="buy-btn">Buy Now</button>
+            <button class="rent-btn">Rent</button>
+            <button class="cart-btn">Add to Cart</button>
+          </div>
+        </div>
+        <!-- Add more books here -->
+      <div class="book-card pshycology" data-title="alchemist">
+          <img src="images/alchemist.jpeg" alt="alchemist" />
+          <h3>Alchemist</h3>
+          <p class="price">₹450</p>
+          <div class="book-buttons">
+            <button class="buy-btn">Buy Now</button>
+            <button class="rent-btn">Rent</button>
+            <button class="cart-btn">Add to Cart</button>
+          </div>
+        </div>
+        <div class="book-card pshycology" data-title="atomic habits">
+          <img src="images/atomic.jpeg" alt="atomic habits" />
+          <h3>Atomic Habits</h3>
+          <p class="price">₹450</p>
+          <div class="book-buttons">
+            <button class="buy-btn">Buy Now</button>
+            <button class="rent-btn">Rent</button>
+            <button class="cart-btn">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Page Turner. Crafted with love for book lovers.</p>
+  </footer>
+
+  <!-- JavaScript for Search and Filter -->
+  <script>
+    function searchBook(event) {
+      event.preventDefault();
+      const input = document.getElementById('searchInput').value.trim().toLowerCase();
+      const books = document.querySelectorAll('.book-card');
+      let found = false;
+
+      books.forEach(book => {
+        const title = book.getAttribute('data-title').toLowerCase();
+        if (title.includes(input)) {
+          book.style.display = 'block';
+          found = true;
+        } else {
+          book.style.display = 'none';
+        }
+      });
+
+      if (!found && input !== "") {
+        alert("Sorry, no book found with that name.");
+      } else if (input === "") {
+        books.forEach(book => {
+          book.style.display = 'block';
+        });
+      }
+    }
+
+    function filterBooks(category) {
+      const books = document.querySelectorAll('.book-card');
+      books.forEach(book => {
+        if (category === 'all' || book.classList.contains(category)) {
+          book.style.display = 'block';
+        } else {
+          book.style.display = 'none';
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
