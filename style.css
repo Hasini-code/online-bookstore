@@ -4,10 +4,11 @@
   padding: 0;
   box-sizing: border-box;
 }
-/* HEADER */
+/* === HEADER STYLES === */
 header {
   background-color: #000;
   padding: 20px 10%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .navbar {
@@ -17,29 +18,30 @@ header {
 }
 
 .logo {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: bold;
-  font-family: 'Playfair Display', serif;
   color: #f6e6b4;
+  font-family: 'Playfair Display', serif;
 }
 
 nav ul {
   display: flex;
-  gap: 25px;
+  gap: 30px;
   list-style: none;
 }
 
 nav ul li a {
   text-decoration: none;
   color: #f6e6b4;
-  font-weight: 500;
   font-size: 1rem;
+  font-weight: 500;
   transition: 0.3s ease;
 }
 
 nav ul li a:hover {
   color: #d4af37;
 }
+
 
 body {
   font-family: 'times new roman', sans-serif;
@@ -135,4 +137,14 @@ body {
 .buy-btn:hover, .cart-btn:hover, .rent-btn:hover {
   background-color: #d4af37;
   color: #000;
+}
+/* === FOOTER STYLES === */
+footer {
+  background-color: #000;
+  color: #f6e6b4;
+  text-align: center;
+  padding: 20px 10%;
+  font-size: 0.95rem;
+  border-top: 1px solid #d4af37;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
 }
