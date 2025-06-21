@@ -1,53 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Page Turner</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Turner - Login & Books</title>
+  <link rel="stylesheet" href="style.css" >
+  <script src="https://kit.fontawesome.com/9e5ba2e3f5.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="navbar">
-      <div class="logo">Page Turner</div>
-      <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="books.html">Books</a></li>
-          <li><a href="#">Cart</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Login</a></li>
-        </ul>
-      </nav>
+  <!-- 🔐 Login / Signup Wrapper -->
+  <div class="wrapper">
+    <div class="form-container sign-up">
+      <form action="#">
+        <h2>Sign up</h2>
+        <div class="form-group">
+          <input type="text" required>
+          <i class="fas fa-user"></i>
+          <label for="">Username</label>
+        </div>
+        <div class="form-group">
+          <input type="email" required>
+          <i class="fas fa-at"></i>
+          <label for="">Email</label>
+        </div>
+        <div class="form-group">
+          <input type="password" required>
+          <i class="fas fa-lock"></i>
+          <label for="">Password</label>
+        </div>
+        <div class="form-group">
+          <input type="password" required>
+          <i class="fas fa-lock"></i>
+          <label for="">Confirm Password</label>
+        </div>
+        <button type="submit" class="btn">Sign up</button>
+        <div class="link">
+          <p>Already have an account?<a href="#" class="signin-link"> Sign in</a></p>
+        </div>
+      </form>
     </div>
-  </header>
 
-  <!-- Search Bar -->
-  <div class="search-container">
-    <form action="#" method="get">
-      <input type="text" placeholder="Search books..." name="q" />
-      <button type="submit">Search</button>
-    </form>
+    <div class="form-container sign-in">
+      <form action="#">
+        <h2>Login</h2>
+        <div class="form-group">
+          <input type="text" required>
+          <i class="fas fa-user"></i>
+          <label for="">Username</label>
+        </div>
+        <div class="form-group">
+          <input type="password" required>
+          <i class="fas fa-lock"></i>
+          <label for="">Password</label>
+        </div>
+        <div class="forgot-pass">
+          <a href="#">Forgot password?</a>
+        </div>
+        <button type="submit" class="btn">Login</button>
+        <div class="link">
+          <p>Don't have an account?<a href="#" class="signup-link"> Sign up</a></p>
+        </div>
+      </form>
+    </div>
   </div>
 
-  <!-- Hero Section: Text + Image -->
-  <section class="main-row">
-    <div class="main-left">
-      <h1>Welcome to Page Turner</h1>
-      <p>Your trusted online bookstore for stories, knowledge, and imagination. Dive into the world of books with elegance and ease.</p>
-    </div>
-    <div class="main-right">
-      <img src="images/background.jpg" alt="Bookshelf" />
-    </div>
-  </section>
-
-  <!-- ✅ Only ONE Trending Books Section BELOW the welcome block -->
+  <!-- 📚 Book Section -->
   <section class="books-section">
     <h2>Trending Books</h2>
     <div class="book-grid">
-
       <!-- Book 1 -->
       <div class="book-card" data-title="atomic habits">
         <img src="images/atomic.jpeg" alt="Atomic Habits">
@@ -56,23 +79,11 @@
         <div class="book-buttons">
           <button class="buy-btn">Buy Now</button>
           <button class="rent-btn">Rent</button>
-          <button class="cart-btn">Add to Cart</button>
+          <button class="cart-btn" onclick="addToCart('Atomic Habits', 499)">Add to Cart</button>
         </div>
       </div>
 
       <!-- Book 2 -->
-      <div class="book-card" data-title="the alchemist">
-        <img src="images/alchemist.jpeg" alt="The Alchemist">
-        <h3>The Alchemist</h3>
-        <p class="price">₹399</p>
-        <div class="book-buttons">
-          <button class="buy-btn">Buy Now</button>
-          <button class="rent-btn">Rent</button>
-          <button class="cart-btn">Add to Cart</button>
-        </div>
-      </div>
-
-      <!-- Book 3 -->
       <div class="book-card" data-title="ikigai">
         <img src="images/ikigai.jpeg" alt="Ikigai">
         <h3>Ikigai</h3>
@@ -80,69 +91,25 @@
         <div class="book-buttons">
           <button class="buy-btn">Buy Now</button>
           <button class="rent-btn">Rent</button>
-          <button class="cart-btn">Add to Cart</button>
+          <button class="cart-btn" onclick="addToCart('Ikigai', 450)">Add to Cart</button>
         </div>
       </div>
-      <!-- Book 4 -->
-      <div class="book-card" data-title="harry potter">
-        <img src="images/Harry.webp" alt="Harry Potter">
-        <h3>Harry Potter</h3>
-        <p class="price">₹640</p>
-        <div class="book-buttons">
-          <button class="buy-btn">Buy Now</button>
-          <button class="rent-btn">Rent</button>
-          <button class="cart-btn">Add to Cart</button>
-        </div>
-      </div>
-      <!-- Book 5 -->
-      <div class="book-card" data-title="pictures of past">
-        <img src="images/Past.webp" alt="Pictures Of Past">
-        <h3>Pictures Of Past</h3>
-        <p class="price">₹499</p>
-        <div class="book-buttons">
-          <button class="buy-btn">Buy Now</button>
-          <button class="rent-btn">Rent</button>
-          <button class="cart-btn">Add to Cart</button>
-        </div>
-      </div>
-      
 
+      <!-- Add more books here -->
     </div>
   </section>
+
+  <!-- 📦 Cart JS -->
   <script>
-    function searchBook(event) {
-      event.preventDefault();
-      const input = document.getElementById('searchInput').value.trim().toLowerCase();
-      const books = document.querySelectorAll('.book-card');
-      let found = false;
-
-      books.forEach(book => {
-        const title = book.getAttribute('data-title').toLowerCase();
-        if (title.includes(input)) {
-          book.style.display = 'block';
-          found = true;
-        } else {
-          book.style.display = 'none';
-        }
-      });
-
-      if (!found && input !== "") {
-        alert("Sorry, no book found with that name.");
-      } else if (input === "") {
-        books.forEach(book => {
-          book.style.display = 'block';
-        });
-      }
+    function addToCart(title, price) {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push({ title, price });
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert(`${title} has been added to your cart!`);
     }
-    </script>
+  </script>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Page Turner. Crafted with love for book lovers.</p>
-  </footer>
-   <!-- JavaScript for Search and Filter -->
-  
-
-
+  <script src="js/main.js"></script>
 </body>
+
 </html>
