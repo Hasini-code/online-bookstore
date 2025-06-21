@@ -4,6 +4,42 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* HEADER */
+header {
+  background-color: #000;
+  padding: 20px 10%;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: 'Playfair Display', serif;
+  color: #f6e6b4;
+}
+
+nav ul {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #f6e6b4;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #d4af37;
+}
 
 body {
   font-family: 'times new roman', sans-serif;
