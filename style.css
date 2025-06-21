@@ -263,6 +263,127 @@ nav ul li a:hover {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
   animation: slideIn 0.8s ease forwards;
 }
+/* === CART PAGE STYLES === */
+.cart-section {
+  padding: 60px 10%;
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+}
+
+.cart-section h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #000;
+  font-family: 'Playfair Display', serif;
+}
+
+/* Cart Items Wrapper */
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+/* Individual Cart Item Card */
+.cart-item {
+  display: flex;
+  gap: 20px;
+  background-color: #f6e6b4;
+  border: 2px solid #d4af37;
+  border-radius: 12px;
+  padding: 20px;
+  width: 100%;
+  max-width: 750px;
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.1);
+  align-items: center;
+}
+
+.cart-item img {
+  width: 120px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Cart Info */
+.cart-info {
+  flex: 1;
+  text-align: left;
+}
+
+.cart-info h3 {
+  font-size: 1.2rem;
+  color: #000;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.cart-info .price {
+  color: #d4af37;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.quantity-input {
+  width: 60px;
+  padding: 6px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 12px;
+}
+
+/* Remove Button */
+.remove-btn {
+  background-color: #000;
+  color: #f6e6b4;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.remove-btn:hover {
+  background-color: #d4af37;
+  color: #000;
+}
+
+/* Cart Summary */
+.cart-summary {
+  font-size: 1.1rem;
+  text-align: center;
+  color: #000;
+  font-weight: bold;
+}
+
+.cart-summary p {
+  margin-bottom: 10px;
+}
+
+.checkout-btn {
+  background-color: #000;
+  color: #f6e6b4;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: 0.3s ease;
+}
+
+.checkout-btn:hover {
+  background-color: #d4af37;
+  color: #000;
+}
+
 
 @keyframes slideIn {
   from {
