@@ -8,10 +8,11 @@
 }
 
 :root {
-    --mainColor: #89216b;
+    --mainColor: #000000;
+    --accentColor: #d4af37;
+    --bgColor: #f6e6b4;
+    --textColor: #1f1f1f;
     --whiteColor: #ffffff;
-    --titleColor: #555555;
-    --labelColor: #333333;
 }
 
 html {
@@ -20,12 +21,13 @@ html {
 }
 
 body {
-    background: linear-gradient(to right, #da4453, var(--mainColor));
+    background-color: var(--bgColor);
     font-weight: 400;
     min-height: 100vh;
     display: grid;
     place-content: center;
     overflow: hidden;
+    color: var(--textColor);
 }
 
 .wrapper {
@@ -58,7 +60,7 @@ body {
     font-size: 3rem;
     text-align: center;
     text-transform: capitalize;
-    color: var(--titleColor);
+    color: var(--mainColor);
 }
 
 .wrapper .form-container form .form-group {
@@ -74,7 +76,7 @@ body {
     transform: translateY(-50%);
     font-size: 1.6rem;
     text-transform: capitalize;
-    color: var(--labelColor);
+    color: var(--mainColor);
     padding: 0 .5rem;
     pointer-events: none;
     transition: all .5s ease;
@@ -93,11 +95,9 @@ body {
     height: 4rem;
     padding: 0 1rem;
     border-radius: .5rem;
-    border: none;
-    outline: none;
-    border: .1rem solid var(--labelColor);
+    border: .1rem solid var(--mainColor);
     font-size: 1.6rem;
-    color: var(--labelColor);
+    color: var(--mainColor);
     background: transparent;
 }
 
@@ -115,36 +115,41 @@ form .form-group input:valid~i {
 }
 
 .wrapper .form-container form .forgot-pass a {
-    color: var(--labelColor);
+    color: var(--mainColor);
     text-decoration: none;
     font-size: 1.4rem;
     text-transform: capitalize;
-    transform: all .5s ease;
+    transition: all .5s ease;
 }
 
 .wrapper .form-container form .forgot-pass a:hover {
-    color: var(--mainColor);
+    color: var(--accentColor);
 }
 
 .wrapper .form-container form .btn {
-    background: linear-gradient(to right, #da4453, var(--mainColor));
-    color: var(--whiteColor);
+    background-color: var(--mainColor);
+    color: var(--bgColor);
     text-transform: capitalize;
     width: 100%;
     height: 4rem;
     font-size: 1.6rem;
     font-weight: 500;
-    outline: none;
     border: none;
     border-radius: .5rem;
     cursor: pointer;
     box-shadow: 0 .2rem 1rem rgba(0 0 0 / .4);
+    transition: background-color 0.3s ease;
+}
+
+.wrapper .form-container form .btn:hover {
+    background-color: var(--accentColor);
+    color: var(--mainColor);
 }
 
 .wrapper .form-container form .link {
     text-align: center;
     font-size: 1.4rem;
-    color: var(--labelColor);
+    color: var(--mainColor);
     margin: 2.5rem 0;
 }
 
@@ -157,7 +162,7 @@ form .form-group input:valid~i {
 }
 
 .wrapper .form-container form .link a:hover {
-    color: #da4453;
+    color: var(--accentColor);
 }
 
 .wrapper .sign-up {
@@ -220,15 +225,4 @@ form .form-group input:valid~i {
     transform: rotate(7deg);
     animation: rotatecard .7s ease-in-out forwards;
     animation-delay: .3s;
-}
-
-@keyframes rotatecard {
-    0% {
-        transform: rotate(7deg);
-    }
-
-    100% {
-        transform: rotate(0);
-        z-index: 1;
-    }
 }
