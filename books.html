@@ -320,29 +320,30 @@
   <script>
   function addToCart(button) {
     const card = button.closest('.book-card');
-    const title = card.getAttribute('data-title');
-    const price = card.getAttribute('data-price');
-    const image = card.getAttribute('data-image');
+    const title = card.querySelector('h3').innerText;
+
+    // ✅ Extract price correctly by removing ₹ symbol
+    const priceText = card.querySelector('.price').innerText;
+    const price = priceText.replace(/[^0-9.]/g, '');
+
+    const image = card.querySelector('img').getAttribute('src');
 
     const book = { title, price, image };
 
-    // Get existing cart from localStorage
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-    // Check if book is already in cart
     const exists = cart.find(item => item.title === title);
     if (exists) {
       alert("This book is already in your cart!");
       return;
     }
 
-    // Add new book to cart
     cart.push(book);
     localStorage.setItem('cart', JSON.stringify(cart));
-
     alert("Book added to cart!");
   }
 </script>
+
 
 
 </body>
