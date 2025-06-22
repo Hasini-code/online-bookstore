@@ -140,6 +140,33 @@
   <footer>
     <p>&copy; 2025 Page Turner. Crafted with love for book lovers.</p>
   </footer>
+  <script>
+  function addToCart(button) {
+    const card = button.closest('.book-card');
+    const title = card.getAttribute('data-title');
+    const price = card.getAttribute('data-price');
+    const image = card.getAttribute('data-image');
+
+    const book = { title, price, image };
+
+    // Get existing cart from localStorage
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    // Check if book is already in cart
+    const exists = cart.find(item => item.title === title);
+    if (exists) {
+      alert("This book is already in your cart!");
+      return;
+    }
+
+    // Add new book to cart
+    cart.push(book);
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    alert("Book added to cart!");
+  }
+</script>
+
    <!-- JavaScript for Search and Filter -->
   
 
