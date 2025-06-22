@@ -23,45 +23,69 @@
       </nav>
     </div>
   </header>
-<main>
-  <section class="cart-section">
-    <h2>Your Cart</h2>
-    <ul id="cart-items"></ul>
-    <p class="cart-total">Total: ₹<span id="cart-total">0</span></p>
-    <button class="clear-cart-btn" onclick="clearCart()">Clear Cart</button>
-  </section>
-</main>
+
+  <!-- Cart Section -->
+  <main>
+    <section class="cart-section">
+      <h2>Your Cart</h2>
+      <div id="cart-items"></div>
+      <p class="cart-total">Total: ₹<span id="cart-total">0</span></p>
+      <button class="clear-cart-btn" onclick="clearCart()">Clear Cart</button>
+    </section>
+  </main>
+
+  <!-- Script -->
   <script>
-  const cart = JSON.parse(localStorage.getItem('cart')) || [];
-  const cartItems = document.getElementById("cart-items");
-  const totalElement = document.getElementById("cart-total");
+    function loadCart() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const cartItems = document.getElementById("cart-items");
+      const totalElement = document.getElementById("cart-total");
 
-  let total = 0;
-cart.forEach(book => {
-  total += parseFloat(book.price);  // ← this line fails if ₹ is present
-  cartItems.innerHTML += `
-    <div class="cart-item">
-      <img src="${book.image}" alt="${book.title}" />
-      <div class="cart-details">
-        <h3>${book.title}</h3>
-        <p>Price: ₹${book.price}</p>
-      </div>
-      <button class="remove-btn" onclick="removeFromCart('${book.title}')">Remove</button>
-    </div>
-  `;
-});
+      cartItems.innerHTML = "";
+      let total = 0;
 
-cartTotal.innerHTML = `
-  <h3>Total: ₹${total}</h3>
-  <button class="checkout-btn">Proceed to Checkout</button>
-  <button class="remove-btn" onclick="clearCart()">Clear Cart</button>
-`;
+      if (cart.length === 0) {
+        cartItems.innerHTML = "<p>Your cart is empty.</p>";
+        totalElement.innerText = "0";
+        return;
+      }
 
-</script>
+      cart.forEach(book => {
+        total += parseFloat(book.price);
+        cartItems.innerHTML += `
+          <div class="cart-item">
+            <img src="${book.image}" alt="${book.title}" />
+            <div class="cart-details">
+              <h3>${book.title}</h3>
+              <p>Price: ₹${book.price}</p>
+            </div>
+            <button class="remove-btn" onclick="removeFromCart('${book.title}')">Remove</button>
+          </div>
+        `;
+      });
 
+      totalElement.innerText = total;
+    }
 
+    function removeFromCart(title) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart = cart.filter(item => item.title !== title);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      loadCart();
+    }
+
+    function clearCart() {
+      localStorage.removeItem('cart');
+      loadCart();
+    }
+
+    // Load on page load
+    window.onload = loadCart;
+  </script>
+
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Page Turner. Crafted with love for book lovers.</p>
   </footer>
-
- 
+</body>
+</html>
