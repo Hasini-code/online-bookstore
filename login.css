@@ -1,56 +1,73 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #dcefff;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f8f1dc;
+  color: #333;
+}
+header {
+  background-color: #1a1a1a;
+  color: #f8f1dc;
+  padding: 20px;
+  text-align: center;
+  font-size: 24px;
+}
+.register-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  margin: 0;
+  height: 75vh;
 }
 
-.container {
-  width: 350px;
-  background-color: white;
-  padding: 20px;
+.register-form {
+  background-color: #fff;
+  padding: 30px;
   border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 320px;
+  text-align: center;
 }
 
-.form-box h2 {
-  text-align: center;
+.register-form h2 {
   margin-bottom: 20px;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-}
-
-input {
+.register-form input {
+  width: 90%;
   padding: 10px;
-  margin-bottom: 12px;
+  margin: 10px 0;
   border: 1px solid #ccc;
   border-radius: 6px;
 }
 
-button {
+.register-form button {
+  width: 100%;
   padding: 10px;
-  background-color: #2196f3;
-  color: white;
+  background-color: #e8c547;
   border: none;
   border-radius: 6px;
+  font-weight: bold;
   cursor: pointer;
+  color: #1a1a1a;
+  transition: background-color 0.3s;
 }
 
-button:hover {
-  background-color: #1976d2;
+.register-form button:hover {
+  background-color: #d4b036;
 }
 
-p {
+.login-link {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.login-link a {
+  color: #1a1a1a;
+  text-decoration: underline;
+}
+footer {
   text-align: center;
-}
-
-a {
-  color: #2196f3;
-  cursor: pointer;
+  padding: 10px 0;
+  background-color: #1a1a1a;
+  color: #f8f1dc;
+  font-size: 14px;
 }
