@@ -37,20 +37,26 @@
   const totalElement = document.getElementById("cart-total");
 
   let total = 0;
+cart.forEach(book => {
+  total += parseFloat(book.price);  // ← this line fails if ₹ is present
+  cartItems.innerHTML += `
+    <div class="cart-item">
+      <img src="${book.image}" alt="${book.title}" />
+      <div class="cart-details">
+        <h3>${book.title}</h3>
+        <p>Price: ₹${book.price}</p>
+      </div>
+      <button class="remove-btn" onclick="removeFromCart('${book.title}')">Remove</button>
+    </div>
+  `;
+});
 
-  cart.forEach(item => {
-    const li = document.createElement("li");
-    li.textContent = `${item.title} - ₹${item.price}`;
-    cartItems.appendChild(li);
-    total += item.price;
-  });
+cartTotal.innerHTML = `
+  <h3>Total: ₹${total}</h3>
+  <button class="checkout-btn">Proceed to Checkout</button>
+  <button class="remove-btn" onclick="clearCart()">Clear Cart</button>
+`;
 
-  totalElement.textContent = total;
-
-  function clearCart() {
-    localStorage.removeItem('cart');
-    location.reload();
-  }
 </script>
 
 
